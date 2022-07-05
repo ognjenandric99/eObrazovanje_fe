@@ -1,0 +1,12 @@
+.main-header{
+    width: 100%;
+    background: var(--blue-light);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+.main-header-buttons{
+    flex:1;
+    display: inline-flex;
+    flex-direction: row-reverse;
+}

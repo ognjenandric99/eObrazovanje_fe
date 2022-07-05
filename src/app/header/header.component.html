@@ -1,0 +1,7 @@
+<header class="main-header">
+    <app-navigation-options></app-navigation-options>
+    <div class="main-header-buttons">
+        <app-navigation-login *ngIf="!isLoggedIn"></app-navigation-login>
+        <app-navigation-logout *ngIf="isLoggedIn"></app-navigation-logout>
+    </div>
+</header>

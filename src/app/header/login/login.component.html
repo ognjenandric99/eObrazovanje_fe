@@ -1,0 +1,5 @@
+<div class="navigation-login">
+    <input placeholder="Korisnicko ime" (change)="handleKeystroke('username', $event)">
+    <input placeholder="Sifra" type="password" (change)="handleKeystroke('password', $event)">
+    <button mat-raised-button color="primary" (click)="login()">Login</button>
+</div>
