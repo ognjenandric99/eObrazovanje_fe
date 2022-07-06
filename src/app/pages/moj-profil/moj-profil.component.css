@@ -1,0 +1,23 @@
+.page-moj-profil{
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+.page-moj-profil .tabela{
+    width: 100%;
+    margin-top: 50px;
+    width: fit-content;
+}
+.page-moj-profil .tabela h4{
+    text-align: center;
+}
+.page-moj-profil .tabela table{
+    border-radius: 5px;
+    border: 2px solid grey;
+}
+.page-moj-profil .tabela tr:nth-of-type(odd){
+    background: lightblue;
+}
+.page-moj-profil .tabela td{
+    padding: 4px 25px;
+}

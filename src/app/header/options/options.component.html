@@ -1,6 +1,3 @@
 <ul class="navigation-options-list">
-    <li class="navigation-option" (click)="navigateTo('/')">Home</li>
-    <li class="navigation-option" (click)="navigateTo('/stranica1')">Stranica 1</li>
-    <li class="navigation-option" (click)="navigateTo('/stranica2')">Stranica 2</li>
-    <li class="navigation-option" (click)="navigateTo('/stranica3')">Stranica 3</li>
+    <li class="navigation-option" *ngFor="let option of options" (click)="navigateTo('{{option.route}}')">{{option.text}}</li>
 </ul>

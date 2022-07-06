@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService, UserServiceLoginResponse } from 'src/services/user.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { User, UserServiceLoginResponse } from 'src/models/User';
+import { UserService } from 'src/services/user.service';
 
 type LoginState = {
   username: string,
@@ -30,10 +32,10 @@ export class LoginComponent implements OnInit {
       password: ''
     }
   }
-
+  
   private handleLoginResponse(loginRes: UserServiceLoginResponse){
-    if(loginRes ) alert(`You have logged in as ${JSON.stringify(loginRes.user)}`)
-    
+    if(!loginRes.status) throw loginRes.message;
+    environment.states.user.updateValue(loginRes.data || null);
   }
 
   login(){

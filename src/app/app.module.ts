@@ -12,9 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LogoutComponent } from './header/logout/logout.component';
 import { RouterModule } from '@angular/router';
-import { Stranica1Component } from './pages/stranica1/stranica1.component';
-import { Stranica2Component } from './pages/stranica2/stranica2.component';
-import { Stranica3Component } from './pages/stranica3/stranica3.component';
+import { LoggedOutComponent } from './pages/logged-out/logged-out.component';
+import { MojProfilComponent } from './pages/moj-profil/moj-profil.component';
 
 const modules = [
     BrowserModule,
@@ -28,10 +27,9 @@ const modules = [
 
 const routing = [
   RouterModule.forRoot([
-    {path: 'stranica1', component: Stranica1Component},
-    {path: 'stranica2', component: Stranica2Component},
-    {path: 'stranica3', component: Stranica3Component},
-    {path: '**', redirectTo: '/'},
+    {path: '', component: MojProfilComponent}, //Defaultna stranica da bude mojProfil
+    {path: 'loggedOut', component: LoggedOutComponent},
+    {path: '**', redirectTo: '/'}, //Nepostojece stranice idu na defaultnu stranicu (mojProfil za ulogovane, loggedOut za logoutovane)
   ])
 ]
 
@@ -41,7 +39,9 @@ const routing = [
     HeaderComponent,
     OptionsComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    LoggedOutComponent,
+    MojProfilComponent
   ],
   imports: [
     ...modules,

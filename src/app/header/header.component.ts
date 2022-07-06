@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { User } from 'src/models/User';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HeaderComponent implements OnInit {
-  isLoggedIn:boolean;
-
+  user:User | null;
   constructor() {
-    this.isLoggedIn= false;
+    this.user = null;
   }
 
   ngOnInit(): void {
+    const userState = environment.states.user;
 
+    const listenUser = (user: User | null) => {
+      if(this.user !== user) this.user = user;
+    }
+
+    userState.subscribe(listenUser);
   }
 }

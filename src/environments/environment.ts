@@ -1,4 +1,9 @@
+import { UserState } from 'src/state/UserState';
+
 export const environment = {
   production: false,
-  backendUrl: 'URL to backend'
+  backendUrl: '<HOSTNAME>/api/',
+  states: {
+    user: new UserState()
+  }
 };

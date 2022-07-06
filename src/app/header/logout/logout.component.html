@@ -1,1 +1,4 @@
-<button mat-raised-button color="primary">Log Out</button>
+<div class="navigation-logout">
+    <span *ngIf="user">{{user.ime}} {{user.prezime}} ({{user.korisnickoIme}})</span>
+    <button mat-raised-button color="primary" (click)="logOut()">Log Out</button>
+</div>
