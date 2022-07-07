@@ -15,7 +15,7 @@
               <td>{{predmet.opis}}</td>
               <td>{{predmet.espb}}</td>
               <td>
-                <button mat-raised-button color="primary">
+                <button mat-raised-button color="primary" (click)="izmeniPredmet(predmet.id)" routerLink="/izmenaPredmeta">
                   Izmeni
                 </button>
                 <button mat-raised-button color="secondary">

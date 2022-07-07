@@ -1,0 +1,33 @@
+<div class="page-izmena-predmeta" *ngIf="predmet">
+  <div class="tabela">
+      <h4>Izmena predmeta {{predmet.naziv}}</h4>
+      <table>
+          <tr>
+            <th>ID</th>
+            <th>Naziv</th>
+            <th>Opis</th>
+            <th>ESPB</th>
+          </tr>
+          <tr>
+              <td>{{predmet.id}}</td>
+              <td>
+                <input placeholder="{{predmet.naziv}}" type="text" value="{{predmet.naziv}}" (change)="updateInput('naziv',$event)"/>
+              </td>
+              <td>
+                <input placeholder="{{predmet.opis}}" type="text" value="{{predmet.opis}}" (change)="updateInput('opis',$event)"/>
+              </td>
+              <td>
+                <input placeholder="{{predmet.espb}}" type="number" value="{{predmet.espb}}" (change)="updateInput('espb',$event)"/>
+              </td>
+          </tr>
+      </table>
+      <div class="opcije">
+        <button mat-raised-button color="primary" (click)="savePredmet()">
+          Sacuvaj
+        </button>
+        <button mat-raised-button color="secondary" routerLink="/">
+          Odbaci
+        </button>
+      </div>
+  </div>
+</div>
