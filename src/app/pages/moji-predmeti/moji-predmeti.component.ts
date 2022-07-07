@@ -15,7 +15,7 @@ export class MojiPredmetiComponent implements OnInit {
 
   ngOnInit(): void {
     NastavnikService.getPredmeti().then(
-      predmeti => console.log(predmeti)
+      predmeti => this.predmeti=predmeti
     )
   }
 
