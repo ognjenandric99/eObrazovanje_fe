@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Predmet } from 'src/models/Predmet';
-import { NastavnikService } from 'src/services/nastavnik.service';
+import { PredmetService } from 'src/services/predmet.service';
 
 @Component({
   selector: 'app-moji-predmeti',
@@ -13,8 +14,12 @@ export class MojiPredmetiComponent implements OnInit {
     this.predmeti = [];
   }
 
+  izmeniPredmet(predmetId: number){
+    environment.states.predmet.updateValue(predmetId);
+  }
+
   ngOnInit(): void {
-    NastavnikService.getPredmeti().then(
+    PredmetService.getPredmeti().then(
       predmeti => this.predmeti=predmeti
     )
   }
