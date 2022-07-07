@@ -14,6 +14,7 @@ import { LogoutComponent } from './header/logout/logout.component';
 import { RouterModule } from '@angular/router';
 import { LoggedOutComponent } from './pages/logged-out/logged-out.component';
 import { MojProfilComponent } from './pages/moj-profil/moj-profil.component';
+import { MojiPredmetiComponent } from './pages/moji-predmeti/moji-predmeti.component';
 
 const modules = [
     BrowserModule,
@@ -27,8 +28,9 @@ const modules = [
 
 const routing = [
   RouterModule.forRoot([
-    {path: '', component: MojProfilComponent}, //Defaultna stranica da bude mojProfil
     {path: 'loggedOut', component: LoggedOutComponent},
+    {path: 'mojiPredmeti', component: MojiPredmetiComponent},
+    {path: '', component: MojProfilComponent}, //Defaultna stranica da bude mojProfil
     {path: '**', redirectTo: '/'}, //Nepostojece stranice idu na defaultnu stranicu (mojProfil za ulogovane, loggedOut za logoutovane)
   ])
 ]
@@ -41,7 +43,8 @@ const routing = [
     LoginComponent,
     LogoutComponent,
     LoggedOutComponent,
-    MojProfilComponent
+    MojProfilComponent,
+    MojiPredmetiComponent
   ],
   imports: [
     ...modules,

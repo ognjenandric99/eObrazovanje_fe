@@ -3,20 +3,28 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { User,UserType } from 'src/models/User';
 
-
-
 type Option = {
   text: string,
   route: string
 }
-
+const genOption = (text: string, route: string) : Option => {
+  return {
+    text,
+    route
+  }
+}
+const mojProfil = genOption('Moj profil', '/mojProfil');
 const anonymousOptions: Option[] = [];
 const studentOptions: Option[] = [
-  {
-    text: 'Moj Profil',
-    route: '/mojProfil'
-  }
+  mojProfil
+];
+const nastavnikOptions: Option[] = [
+  mojProfil,
+  genOption('Moji predmeti' , '/mojiPredmeti')
 ]
+const adminOptions: Option[] = [
+  mojProfil
+];
 
 @Component({
   selector: 'app-navigation-options',
@@ -31,10 +39,6 @@ export class OptionsComponent implements OnInit {
     this.user = null;
   }
 
-  navigateTo(path: string){
-    this.router.navigate([path]);
-  }
-
   ngOnInit(): void {
     const userState = environment.states.user;
 
@@ -42,7 +46,8 @@ export class OptionsComponent implements OnInit {
       if(this.user !== user) this.user = user;
 
       if(this.user?.tipKorisnika === UserType.STUDENT) this.options = studentOptions;
-
+      if(this.user?.tipKorisnika === UserType.NASTAVNIK) this.options = nastavnikOptions;
+      if(this.user?.tipKorisnika === UserType.ADMIN) this.options = adminOptions;
       if(!this.user) {
         this.options = anonymousOptions;
         this.router.navigate(['/loggedOut']);

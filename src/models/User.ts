@@ -16,7 +16,9 @@ export enum UserPol {
     ZENSKI = "ZENSKI"
 }
 export enum UserType {
-    STUDENT = "STUDENT"
+    STUDENT = "STUDENT",
+    NASTAVNIK = "NASTAVNIK",
+    ADMIN = "ADMIN"
 }
 
 export type UserServiceLoginResponse = {
