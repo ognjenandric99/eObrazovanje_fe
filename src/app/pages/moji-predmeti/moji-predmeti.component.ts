@@ -18,6 +18,10 @@ export class MojiPredmetiComponent implements OnInit {
     environment.states.predmet.updateValue(predmetId);
   }
 
+  prikaziStudentePredmeta(predmetId: number){
+    environment.states.predmet.updateValue(predmetId);
+  }
+
   ngOnInit(): void {
     PredmetService.getPredmeti().then(
       predmeti => this.predmeti=predmeti

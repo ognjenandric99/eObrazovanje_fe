@@ -1,0 +1,25 @@
+<div class="page-studenti-predmeta" *ngIf="studenti">
+  <div class="tabela">
+      <h4 *ngIf="predmet">Studenti predmeta {{predmet.naziv}}</h4>
+      <table>
+          <tr>
+            <th>ID</th>
+            <th>Broj Indeksa</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Opcije</th>
+          </tr>
+          <tr *ngFor="let student of studenti">
+              <td>{{student.id}}</td>
+              <td>{{student.brIndeksa}}</td>
+              <td>{{student.korisnikDTO.ime}}</td>
+              <td>{{student.korisnikDTO.prezime}}</td>
+              <td>
+                <button mat-raised-button color="primary" (click)="izbaciStudenta(student.korisnikDTO.id)" routerLink="/mojiPredmeti">
+                  Izbaci
+                </button>
+              </td>
+          </tr>
+      </table>
+  </div>
+</div>
