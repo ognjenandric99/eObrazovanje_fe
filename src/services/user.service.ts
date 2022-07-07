@@ -12,6 +12,7 @@ const getToken = async (username: string, password: string) : Promise<string> =>
             lozinka: password
         }
     });
+    environment.states.token.updateValue(tokenRequest.data);
     return tokenRequest.data as string
 }
 
