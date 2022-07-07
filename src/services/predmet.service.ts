@@ -1,23 +1,17 @@
 import { axiosClient } from "src/clients/axiosClient";
 import { environment } from "src/environments/environment";
 import { Predmet } from "src/models/Predmet";
-<<<<<<< HEAD
 import { User } from "src/models/User";
-=======
->>>>>>> ccfd91cba3a428549cb947c58b455c3dfdd2d860
 
 type updatePredmetResponse = {
   updated: boolean,
   message: string
 }
-<<<<<<< HEAD
 export type getStudentiResponse = {
   id: number,
   brIndeksa: string,
   korisnikDTO: User
 }[]
-=======
->>>>>>> ccfd91cba3a428549cb947c58b455c3dfdd2d860
 export class PredmetService {
   static async getPredmeti() : Promise<Predmet[]>{
     const userRequest = await axiosClient({
