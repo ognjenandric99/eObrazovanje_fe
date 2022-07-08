@@ -1,0 +1,19 @@
+<div class="page-moj-predmeti">
+  <div class="tabela">
+    <h4>Prijavljeni ispiti</h4>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Predmet</th>
+        <th>Datum</th>
+        <th>Status</th>
+      </tr>
+      <tr *ngFor="let ispit of ispiti">
+        <td>{{ispit.id}}</td>
+        <td>{{ispit.predmet.naziv}}</td>
+        <td>{{ispit.datum}}</td>
+        <td>{{ispit.status}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

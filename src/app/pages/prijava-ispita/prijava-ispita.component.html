@@ -1,0 +1,24 @@
+<div class="page-moj-predmeti">
+  <div class="tabela">
+    <h4>Ispiti za prijavu</h4>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Predmet</th>
+        <th>Datum</th>
+        <th>Status</th>
+      </tr>
+      <tr *ngFor="let izvodjenjeIspita of izvodjenjaIspita">
+        <td>{{izvodjenjeIspita.id}}</td>
+        <td>{{izvodjenjeIspita.izvodjenje.predmet.naziv}}</td>
+        <td>{{izvodjenjeIspita.datum}}</td>
+        <td>{{izvodjenjeIspita.status}}</td>
+        <td>
+          <button mat-raised-button color="primary" (click)="prijavaIspita(izvodjenjeIspita.id, 1)">
+            Prijavi
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
