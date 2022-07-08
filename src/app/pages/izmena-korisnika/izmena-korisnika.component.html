@@ -1,0 +1,45 @@
+<div class="page-izmena-korisnika" *ngIf="korisnik">
+  <div class="tabela">
+      <h4>Izmena korisnika {{korisnik.ime}}</h4>
+      <table>
+          <tr>
+            <th>ID</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>JMBG</th>
+            <th>Adresa</th>
+            <th>Korisnicko Ime</th>
+            <th>Lozinka</th>
+            <th>Email</th>
+          </tr>
+          <tr>
+              <td>{{korisnik.id}}</td>
+              <td>
+                <input placeholder="{{korisnik.ime}}" type="text" value="{{korisnik.ime}}" (change)="updateInput('ime',$event)"/>
+              </td>
+              <td>
+                <input placeholder="{{korisnik.prezime}}" type="text" value="{{korisnik.prezime}}" (change)="updateInput('prezime',$event)"/>
+              </td>
+              <td>{{korisnik.jmbg}}</td>
+              <td>
+                <input placeholder="{{korisnik.adresa}}" type="text" value="{{korisnik.adresa}}" (change)="updateInput('adresa',$event)"/>
+              </td>
+              <td>{{korisnik.korisnickoIme}}</td>
+              <td>
+                <input placeholder="{{korisnik.lozinka}}" type="password" value="{{korisnik.lozinka}}" (change)="updateInput('lozinka',$event)"/>
+              </td>
+              <td>
+                <input placeholder="{{korisnik.email}}" type="text" value="{{korisnik.email}}" (change)="updateInput('email',$event)"/>
+              </td>
+          </tr>
+      </table>
+      <div class="opcije">
+        <button mat-raised-button color="primary" (click)="saveKorisnik()" routerLink="/">
+          Sacuvaj
+        </button>
+        <button mat-raised-button color="secondary" routerLink="/">
+          Odbaci
+        </button>
+      </div>
+  </div>
+</div>

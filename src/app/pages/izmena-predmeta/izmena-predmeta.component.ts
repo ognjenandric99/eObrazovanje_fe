@@ -16,10 +16,7 @@ export class IzmenaPredmetaComponent implements OnInit {
   loadPredmet(predmet: Predmet){
     this.predmet = predmet;
     this.input = {
-      id: this.predmet.id,
-      espb: this.predmet.espb,
-      naziv: this.predmet.naziv,
-      opis: this.predmet.opis
+      ...this.predmet
     }
   }
 

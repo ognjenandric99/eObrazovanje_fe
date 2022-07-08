@@ -1,31 +1,29 @@
-.page-izmena-predmeta{
+.page-studenti{
   width: 100%;
   display: inline-flex;
   justify-content: center;
-  text-align: center;
 }
-.page-izmena-predmeta .tabela{
+.page-studenti .tabela{
   width: 100%;
   margin-top: 50px;
   width: fit-content;
   background-color: rgb(140, 200, 255);
   border-radius: 10px;
-  padding: 20px;
 }
-.page-izmena-predmeta .tabela h4{
+.page-studenti .tabela h4{
   text-align: center;
 }
-.page-izmena-predmeta .tabela table{
+.page-studenti .tabela table{
   border-radius: 5px;
 }
-.page-izmena-predmeta .tabela tr:nth-of-type(odd){
+.page-studenti .tabela tr:nth-of-type(odd){
   background: lightblue;
 }
-.page-izmena-predmeta .tabela td{
+.page-studenti .tabela td{
   padding: 4px 25px;
-  min-width: 100px;
+  min-width: 10%;
   text-align: center;
 }
-.page-izmena-predmeta .tabela .opcije button{
+.page-studenti .tabela td button{
   margin: 0 5px;
 }

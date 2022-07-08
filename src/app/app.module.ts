@@ -17,6 +17,9 @@ import { MojProfilComponent } from './pages/moj-profil/moj-profil.component';
 import { MojiPredmetiComponent } from './pages/moji-predmeti/moji-predmeti.component';
 import { IzmenaPredmetaComponent } from './pages/izmena-predmeta/izmena-predmeta.component';
 import { StudentiPredmetaComponent } from './pages/studenti-predmeta/studenti-predmeta.component';
+import { NastavniciComponent } from './pages/nastavnici/nastavnici.component';
+import { StudentiComponent } from './pages/studenti/studenti.component';
+import { IzmenaKorisnikaComponent } from './pages/izmena-korisnika/izmena-korisnika.component';
 
 const modules = [
     BrowserModule,
@@ -34,6 +37,9 @@ const routing = [
     {path: 'mojiPredmeti', component: MojiPredmetiComponent},
     {path: 'izmenaPredmeta', component: IzmenaPredmetaComponent},
     {path: 'studentiPredmeta', component: StudentiPredmetaComponent},
+    {path: 'studenti', component: StudentiComponent},
+    {path: 'nastavnici', component: NastavniciComponent},
+    {path: 'izmeniKorisnika', component: IzmenaKorisnikaComponent},
     {path: '', component: MojProfilComponent}, //Defaultna stranica da bude mojProfil
     {path: '**', redirectTo: '/'}, //Nepostojece stranice idu na defaultnu stranicu (mojProfil za ulogovane, loggedOut za logoutovane)
   ])
@@ -50,7 +56,10 @@ const routing = [
     MojProfilComponent,
     MojiPredmetiComponent,
     IzmenaPredmetaComponent,
-    StudentiPredmetaComponent
+    StudentiPredmetaComponent,
+    NastavniciComponent,
+    StudentiComponent,
+    IzmenaKorisnikaComponent
   ],
   imports: [
     ...modules,

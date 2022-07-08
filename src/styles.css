@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     padding: 0;
+    padding-top: 100px;
     margin: 0 !important;
 }
 
