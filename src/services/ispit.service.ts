@@ -26,6 +26,15 @@ export class IspitService {
     return userRequest.data;
   }
 
+  static async getIstorijaPolaganja() : Promise<Ispit[]>{
+    const userRequest = await axiosClient({
+      method: 'get',
+      url: `${environment.backendUrl}/ispiti?status=SVI`,
+    });
+    console.log(userRequest.data);
+    return userRequest.data;
+  }
+
   static async getIzvodjenjaIspita() : Promise<IzvodjenjeIspita[]>{
     const userRequest = await axiosClient({
         method: 'get',
