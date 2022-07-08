@@ -20,6 +20,7 @@ import { StudentiPredmetaComponent } from './pages/studenti-predmeta/studenti-pr
 import { PrijavljeniIspitiComponent } from './pages/prijavljeni-ispiti/prijavljeni-ispiti.component';
 import { PrijavaIspitaComponent } from './pages/prijava-ispita/prijava-ispita.component';
 import { StudentskiNalogComponent } from './pages/studentski-nalog/studentski-nalog.component';
+import { PolozeniIspitiComponent } from './pages/polozeni-ispiti/polozeni-ispiti.component';
 
 const modules = [
     BrowserModule,
@@ -39,6 +40,7 @@ const routing = [
     {path: 'studentiPredmeta', component: StudentiPredmetaComponent},
     {path: 'prijavaIspita', component: PrijavaIspitaComponent},
     {path: 'prijavljeniIspiti', component: PrijavljeniIspitiComponent},
+    {path: 'polozeniIspiti', component: PolozeniIspitiComponent},
     {path: 'studentskiNalog', component: StudentskiNalogComponent},
     {path: '', component: MojProfilComponent}, //Defaultna stranica da bude mojProfil
     {path: '**', redirectTo: '/'}, //Nepostojece stranice idu na defaultnu stranicu (mojProfil za ulogovane, loggedOut za logoutovane)
@@ -59,7 +61,8 @@ const routing = [
     StudentiPredmetaComponent,
     PrijavljeniIspitiComponent,
     PrijavaIspitaComponent,
-    StudentskiNalogComponent
+    StudentskiNalogComponent,
+    PolozeniIspitiComponent
   ],
   imports: [
     ...modules,

@@ -19,6 +19,7 @@ const studentOptions: Option[] = [
   mojProfil,
   genOption('Prijava ispita' , '/prijavaIspita'),
   genOption('Prijavljeni ispiti' , '/prijavljeniIspiti'),
+  genOption('Polozeni ispiti' , '/polozeniIspiti'),
   genOption('Studentski nalog (finansije)' , '/studentskiNalog')
 ];
 const nastavnikOptions: Option[] = [
