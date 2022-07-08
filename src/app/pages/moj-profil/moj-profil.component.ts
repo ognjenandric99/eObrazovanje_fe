@@ -17,6 +17,10 @@ export class MojProfilComponent implements OnInit {
     this.user = user;
   }
 
+  izmeniProfil(){
+    environment.states.korisnik.updateValue(environment.states.user.getValue())
+  }
+
   ngOnInit(): void {
 
   }

@@ -1,9 +1,11 @@
 .main-header{
-    width: 100%;
+    width: 100vw;
     background: var(--blue-light);
     padding: 10px 15px;
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0;
 }
 .main-header-buttons{
     flex:1;

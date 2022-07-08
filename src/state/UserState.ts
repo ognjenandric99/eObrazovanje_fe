@@ -12,6 +12,7 @@ const getInitialUser = () : User | null => {
     }
 }
 
+//Korisni se kao skladistenje ulogovanog korisnika, za sve ostalo koristiti KorisnikState
 export class UserState {
     user: User | null;
     private subscribed: subscribeCallback[];

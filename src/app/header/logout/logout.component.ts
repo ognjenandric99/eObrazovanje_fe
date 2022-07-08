@@ -10,7 +10,7 @@ import { User } from 'src/models/User';
 export class LogoutComponent implements OnInit {
   user: User | null;
   constructor() {
-    this.user = null;
+    this.user = environment.states.user.getValue()
   }
 
   logOut(): void {
@@ -19,8 +19,11 @@ export class LogoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const updateUser = (user: User | null) => {
+      this.user = user;
+    }
     const userState = environment.states.user;
-    this.user = userState.getValue();
+    userState.subscribe(updateUser);
   }
 
 }

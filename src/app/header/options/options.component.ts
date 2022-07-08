@@ -28,7 +28,9 @@ const nastavnikOptions: Option[] = [
   genOption('Moji predmeti' , '/mojiPredmeti')
 ]
 const adminOptions: Option[] = [
-  mojProfil
+  mojProfil,
+  genOption('Nastavnici', '/nastavnici'),
+  genOption('Studenti', '/studenti')
 ];
 
 @Component({

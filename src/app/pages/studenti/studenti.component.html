@@ -1,0 +1,31 @@
+<div class="page-studenti" *ngIf="studenti">
+  <div class="tabela">
+      <h4>Svi studenti</h4>
+      <table>
+          <tr>
+            <th>ID</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>JMBG</th>
+            <th>Adresa</th>
+            <th>Korisnicko Ime</th>
+            <th>Email</th>
+            <th>Opcije</th>
+          </tr>
+          <tr *ngFor="let student of studenti">
+              <td>{{student.id}}</td>
+              <td>{{student.ime}}</td>
+              <td>{{student.prezime}}</td>
+              <td>{{student.jmbg}}</td>
+              <td>{{student.adresa}}</td>
+              <td>{{student.korisnickoIme}}</td>
+              <td>{{student.email}}</td>
+              <td>
+                <button mat-raised-button color="primary" (click)="izmeniStudenta(student)" routerLink="/izmeniKorisnika">
+                  Izmeni
+                </button>
+              </td>
+          </tr>
+      </table>
+  </div>
+</div>
