@@ -10,4 +10,6 @@ export type Ispit = {
   status: string;
   ispitniRok: string;
   ucionica: string;
+  student: string;
+  studentIndeks: string
 };

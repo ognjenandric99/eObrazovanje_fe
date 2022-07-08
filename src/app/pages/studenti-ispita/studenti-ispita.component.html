@@ -1,1 +1,26 @@
-<p>studenti-ispita works!</p>
+<div class="page-studenti-ispita" *ngIf="studenti">
+    <div class="tabela">
+        <h4 *ngIf="ispiti">Studenti ispita iz {{ispiti.id}}</h4>
+        <table>
+            <tr>
+              <th>Bodovi iz predispitnih</th>
+              <th>Bodovi na zavrsnom</th>
+              <th>Ocena</th>
+              <th>Status</th>
+              <th>Ime studenta</th>
+              <th>Broj indeksa</th>
+            </tr>
+            <!-- <tr *ngFor="let ispit of ispiti">
+                <td>{{ispit.predispitniBodovi}}</td>
+                <td>{{ispit.finalniBodovi}}</td>
+                <td>{{ispit.ocena}}</td>
+                <td>{{ispit.status}}</td>
+                <td>{{ispit.ocena}}</td>
+                <td>{{ispit.status}}</td>
+                <td>
+        
+                </td>
+            </tr> -->
+        </table>
+    </div>
+  </div>

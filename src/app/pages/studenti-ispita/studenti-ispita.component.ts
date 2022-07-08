@@ -1,33 +1,36 @@
-// import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { IspitSaStudentInfom } from 'src/models/IspitiSaStudentInfom';
+import { getStudentiResponse, IspitService } from 'src/services/ispit.service';
 
-// @Component({
-//   selector: 'app-studenti-ispita',
-//   templateUrl: './studenti-ispita.component.html',
-//   styleUrls: ['./studenti-ispita.component.css'],
-// })
-// export class StudentiIspitaComponent implements OnInit {
-//   studenti?: getStudentiResponse;
-//   predmet?: Predmet;
-//   constructor() {}
+@Component({
+  selector: 'app-studenti-ispita',
+  templateUrl: './studenti-ispita.component.html',
+  styleUrls: ['./studenti-ispita.component.css'],
+})
+export class StudentiIspitaComponent implements OnInit {
+  studenti?: getStudentiResponse;
+  ispiti?: IspitSaStudentInfom
+  
+  constructor() {
+    
+  }
 
-//   loadStudenti(studenti: getStudentiResponse) {
-//     this.studenti = studenti;
-//   }
-//   loadPredmet(predmet: Predmet) {
-//     this.predmet = predmet;
-//   }
+  loadStudenti(studenti: getStudentiResponse) {
+    this.studenti = studenti;
+    console.log(this.studenti)
+  }
 
-//   izbaciStudenta(studentId: number) {
-//     PredmetService.izbaciStudentaSaPredmeta(studentId, this.predmet?.id!);
-//   }
 
-//   ngOnInit(): void {
-//     const predmetId = environment.states.predmet.getValue() as number;
-//     PredmetService.getPredmet(predmetId).then((predmet) =>
-//       this.loadPredmet(predmet)
-//     );
-//     PredmetService.getStudenti(predmetId).then((studenti) =>
-//       this.loadStudenti(studenti)
-//     );
-//   }
-// }
+  ngOnInit(): void {
+    const ispitId = environment.states.ispit.getValue() as number;
+
+    IspitService.getStudenti(ispitId).then(studenti =>
+      this.loadStudenti(studenti)
+    );
+  }
+
+  prikaziStudente(izvodjenjaIspitaId: number) {
+    environment.states.ispit.updateValue(izvodjenjaIspitaId);
+  }
+}
