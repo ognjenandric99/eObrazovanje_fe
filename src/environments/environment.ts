@@ -1,3 +1,4 @@
+import { IzvodjenjeIspitaState } from 'src/state/IzvodjenjeIspitaState';
 import { PredmetState } from 'src/state/PredmetState';
 import { TokenState } from 'src/state/TokenState';
 import { UserState } from 'src/state/UserState';
@@ -8,6 +9,7 @@ export const environment = {
   states: {
     token: new TokenState(),
     user: new UserState(),
-    predmet: new PredmetState()
-  }
+    predmet: new PredmetState(),
+    izvodjenjeIspita: new IzvodjenjeIspitaState(),
+  },
 };

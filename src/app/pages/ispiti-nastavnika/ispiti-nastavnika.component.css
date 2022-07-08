@@ -1,0 +1,30 @@
+.page-moj-ispiti {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+.page-moj-ispiti .tabela {
+  width: 100%;
+  margin-top: 50px;
+  width: fit-content;
+  background-color: rgb(140, 200, 255);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.page-moj-ispiti .tabela h4 {
+  text-align: center;
+}
+.page-moj-ispiti .tabela table {
+  border-radius: 5px;
+}
+.page-moj-ispiti .tabela tr:nth-of-type(odd) {
+  background: lightblue;
+}
+.page-moj-ispiti .tabela td {
+  padding: 4px 25px;
+  min-width: 250px;
+  text-align: center;
+}
+.page-moj-ispiti .tabela td button {
+  margin: 0 5px;
+}

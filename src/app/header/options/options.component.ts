@@ -1,39 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { User,UserType } from 'src/models/User';
+import { User, UserType } from 'src/models/User';
 
 type Option = {
-  text: string,
-  route: string
-}
-const genOption = (text: string, route: string) : Option => {
+  text: string;
+  route: string;
+};
+const genOption = (text: string, route: string): Option => {
   return {
     text,
-    route
-  }
-}
+    route,
+  };
+};
 const mojProfil = genOption('Moj profil', '/mojProfil');
 const anonymousOptions: Option[] = [];
-const studentOptions: Option[] = [
-  mojProfil
-];
+const studentOptions: Option[] = [mojProfil];
 const nastavnikOptions: Option[] = [
   mojProfil,
-  genOption('Moji predmeti' , '/mojiPredmeti')
-]
-const adminOptions: Option[] = [
-  mojProfil
+  genOption('Moji predmeti', '/mojiPredmeti'),
+  genOption('Moji ispiti', '/ispitiNastavnika'),
 ];
+const adminOptions: Option[] = [mojProfil];
 
 @Component({
   selector: 'app-navigation-options',
   templateUrl: './options.component.html',
-  styleUrls: ['./options.component.css']
+  styleUrls: ['./options.component.css'],
 })
 export class OptionsComponent implements OnInit {
   user: User | null;
-  options: Option[]
+  options: Option[];
   constructor(private router: Router) {
     this.options = [];
     this.user = null;
@@ -43,20 +40,22 @@ export class OptionsComponent implements OnInit {
     const userState = environment.states.user;
 
     const listenUser = (user: User | null) => {
-      if(this.user !== user) this.user = user;
+      if (this.user !== user) this.user = user;
 
-      if(this.user?.tipKorisnika === UserType.STUDENT) this.options = studentOptions;
-      if(this.user?.tipKorisnika === UserType.NASTAVNIK) this.options = nastavnikOptions;
-      if(this.user?.tipKorisnika === UserType.ADMIN) this.options = adminOptions;
-      if(!this.user) {
+      if (this.user?.tipKorisnika === UserType.STUDENT)
+        this.options = studentOptions;
+      if (this.user?.tipKorisnika === UserType.NASTAVNIK)
+        this.options = nastavnikOptions;
+      if (this.user?.tipKorisnika === UserType.ADMIN)
+        this.options = adminOptions;
+      if (!this.user) {
         this.options = anonymousOptions;
         this.router.navigate(['/loggedOut']);
       } else {
         this.router.navigate([this.options[0].route]);
       }
-    }
+    };
 
     userState.subscribe(listenUser);
   }
-
 }

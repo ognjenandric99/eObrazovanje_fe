@@ -1,0 +1,30 @@
+<div class="page-moj-ispiti">
+  <div class="tabela">
+    <h4>Moji predmeti</h4>
+    <table>
+      <tr>
+        <th>Datum</th>
+        <th>Rok</th>
+        <th>Naziv predmeta</th>
+        <th>Ucionica</th>
+        <th>Studenti</th>
+      </tr>
+      <tr *ngFor="let ispit of izvodjenjaIspita">
+        <td>{{ ispit.datum }}</td>
+        <td>{{ ispit.ispitniRok }}</td>
+        <td>{{ ispit.izvodjenje }}</td>
+        <td>{{ ispit.ucionica }}</td>
+        <td>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="prikaziStudente(ispit.id)"
+            routerLink="/studentiIspita"
+          >
+            Prikazi studente
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
