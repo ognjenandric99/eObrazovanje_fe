@@ -17,6 +17,11 @@ import { MojProfilComponent } from './pages/moj-profil/moj-profil.component';
 import { MojiPredmetiComponent } from './pages/moji-predmeti/moji-predmeti.component';
 import { IzmenaPredmetaComponent } from './pages/izmena-predmeta/izmena-predmeta.component';
 import { StudentiPredmetaComponent } from './pages/studenti-predmeta/studenti-predmeta.component';
+import { PrijavljeniIspitiComponent } from './pages/prijavljeni-ispiti/prijavljeni-ispiti.component';
+import { PrijavaIspitaComponent } from './pages/prijava-ispita/prijava-ispita.component';
+import { StudentskiNalogComponent } from './pages/studentski-nalog/studentski-nalog.component';
+import { PolozeniIspitiComponent } from './pages/polozeni-ispiti/polozeni-ispiti.component';
+import { IstorijaPolaganjaComponent } from './pages/istorija-polaganja/istorija-polaganja.component';
 import { NastavniciComponent } from './pages/nastavnici/nastavnici.component';
 import { StudentiComponent } from './pages/studenti/studenti.component';
 import { IzmenaKorisnikaComponent } from './pages/izmena-korisnika/izmena-korisnika.component';
@@ -37,6 +42,11 @@ const routing = [
     {path: 'mojiPredmeti', component: MojiPredmetiComponent},
     {path: 'izmenaPredmeta', component: IzmenaPredmetaComponent},
     {path: 'studentiPredmeta', component: StudentiPredmetaComponent},
+    {path: 'prijavaIspita', component: PrijavaIspitaComponent},
+    {path: 'prijavljeniIspiti', component: PrijavljeniIspitiComponent},
+    {path: 'polozeniIspiti', component: PolozeniIspitiComponent},
+    {path: 'istorijaPolaganja', component: IstorijaPolaganjaComponent},
+    {path: 'studentskiNalog', component: StudentskiNalogComponent},
     {path: 'studenti', component: StudentiComponent},
     {path: 'nastavnici', component: NastavniciComponent},
     {path: 'izmeniKorisnika', component: IzmenaKorisnikaComponent},
@@ -57,6 +67,11 @@ const routing = [
     MojiPredmetiComponent,
     IzmenaPredmetaComponent,
     StudentiPredmetaComponent,
+    PrijavljeniIspitiComponent,
+    PrijavaIspitaComponent,
+    StudentskiNalogComponent,
+    PolozeniIspitiComponent,
+    IstorijaPolaganjaComponent,
     NastavniciComponent,
     StudentiComponent,
     IzmenaKorisnikaComponent

@@ -16,7 +16,12 @@ const genOption = (text: string, route: string) : Option => {
 const mojProfil = genOption('Moj profil', '/mojProfil');
 const anonymousOptions: Option[] = [];
 const studentOptions: Option[] = [
-  mojProfil
+  mojProfil,
+  genOption('Prijava ispita' , '/prijavaIspita'),
+  genOption('Prijavljeni ispiti' , '/prijavljeniIspiti'),
+  genOption('Polozeni ispiti' , '/polozeniIspiti'),
+  genOption('Istorija polaganja' , '/istorijaPolaganja'),
+  genOption('Studentski nalog (finansije)' , '/studentskiNalog')
 ];
 const nastavnikOptions: Option[] = [
   mojProfil,
