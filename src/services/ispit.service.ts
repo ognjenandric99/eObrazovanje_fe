@@ -31,7 +31,6 @@ export class IspitService {
       method: 'get',
       url: `${environment.backendUrl}/ispiti?status=SVI`,
     });
-    console.log(userRequest.data);
     return userRequest.data;
   }
 
